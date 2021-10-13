@@ -1,0 +1,7 @@
+.Main-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60px 80px;
+}

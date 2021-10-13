@@ -1,0 +1,38 @@
+.Nav-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Logo, .Cart-section {
+    margin: 40px 0 0 80px;
+}
+.Logo-text {
+    font-size: 31.25px;
+    font-weight: 400;
+}
+.Cart-section {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 40px 80px 0 0;
+}
+.Cart-text {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+.circle {
+    background-color: rgb(99, 97, 97);
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    padding: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    position: relative;
+    top: -12px;
+    right: 10px;
+}
