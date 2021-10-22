@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.705cc4b9.chunk.css",
+    "main.js": "/static/js/main.6f735d34.chunk.js",
+    "main.js.map": "/static/js/main.6f735d34.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a619025f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a619025f.js.map",
+    "static/js/2.e4c90c77.chunk.js": "/static/js/2.e4c90c77.chunk.js",
+    "static/js/2.e4c90c77.chunk.js.map": "/static/js/2.e4c90c77.chunk.js.map",
+    "static/js/3.0ed6fe1f.chunk.js": "/static/js/3.0ed6fe1f.chunk.js",
+    "static/js/3.0ed6fe1f.chunk.js.map": "/static/js/3.0ed6fe1f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.705cc4b9.chunk.css.map": "/static/css/main.705cc4b9.chunk.css.map",
+    "static/js/2.e4c90c77.chunk.js.LICENSE.txt": "/static/js/2.e4c90c77.chunk.js.LICENSE.txt",
+    "static/media/foundation.8f0f840d.png": "/static/media/foundation.8f0f840d.png",
+    "static/media/insta-eyeliner.1153611a.png": "/static/media/insta-eyeliner.1153611a.png",
+    "static/media/nailcolor-remover.f212b4fc.png": "/static/media/nailcolor-remover.f212b4fc.png",
+    "static/media/sheet-facepack.14161961.png": "/static/media/sheet-facepack.14161961.png",
+    "static/media/shine-eyeliner.41dee04b.png": "/static/media/shine-eyeliner.41dee04b.png",
+    "static/media/shop-bag.6c53ec6e.svg": "/static/media/shop-bag.6c53ec6e.svg",
+    "static/media/sunscreen.16cfe36d.png": "/static/media/sunscreen.16cfe36d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a619025f.js",
+    "static/js/2.e4c90c77.chunk.js",
+    "static/css/main.705cc4b9.chunk.css",
+    "static/js/main.6f735d34.chunk.js"
+  ]
+}

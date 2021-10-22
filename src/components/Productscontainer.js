@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import sunscreen from './../images/sunscreen.png';
 import foundation from './../images/foundation.png';
 import nailcolorRemove from './../images/nailcolor-remover.png';
-import instaEyeliner from './../images/insta-eyeliner.png';
-import facePack from './../images/sheet-facepack.png';
+// import instaEyeliner from './../images/insta-eyeliner.png';
+// import facePack from './../images/sheet-facepack.png';
 import shineEyeliner from './../images/shine-eyeliner.png';
 import './../styles/Productscontainer.css';
 

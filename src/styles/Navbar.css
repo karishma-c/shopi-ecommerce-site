@@ -11,6 +11,10 @@
     font-size: 31.25px;
     font-weight: 400;
 }
+.Logo-text a {
+    text-decoration: none;
+    color: #1B1C1E;
+}
 .Cart-section {
     display: flex;
     flex-flow: row nowrap;
@@ -22,7 +26,11 @@
     font-weight: 400;
     margin: 0;
 }
-.circle {
+.Cart-text a {
+    text-decoration: none;
+    color: #1B1C1E;
+}
+/* .circle {
     background-color: rgb(99, 97, 97);
     border-radius: 50%;
     width: 17px;
@@ -35,4 +43,4 @@
     position: relative;
     top: -12px;
     right: 10px;
-}
+} */

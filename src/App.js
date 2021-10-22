@@ -2,16 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
+import Cart from './components/Cartcontainer';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-      </Switch> 
-    </Router> 
+        <Route exact path='/' component={Home}></Route>
+        <Route exact path='/cart' component={Cart}></Route>
+      </Switch>
+    </Router>
   );
 }
 
