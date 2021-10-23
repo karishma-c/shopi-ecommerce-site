@@ -11,61 +11,116 @@ import './../styles/Productscontainer.css';
 const Productscontainer = () => {
     
     return (
-        <div className="Products-container" onLoad={showProducts}>
-            <div className="Product-card">
-                <div className="Product-image" data-itemType="powder">
-                    <img src={sunscreen} alt="img" />
+        <div>
+            <div className="Products-container" onLoad={showProducts}>
+                <div className="Product-card" data-itemType="powder">
+                    <div className="Product-image">
+                        <img src={sunscreen} alt="img" />
+                    </div>
+                    <div className="Product-details">
+                        <h3 className="Product-name">Face Powder With Sunscreen</h3>
+                        <h4 className="Product-price">$500</h4>
+                        <h5 className="Add-button">Add to Cart</h5>
+                    </div>
                 </div>
-                <div className="Product-details">
-                    <h3 className="Product-name">Face Powder With Sunscreen</h3>
-                    <h4 className="Product-price">$500</h4>
-                    <h5 className="Add-button">Add to Cart</h5>
+                <div className="Product-card" data-itemType="cream">
+                    <div className="Product-image">
+                        <img src={foundation} alt="img" />
+                    </div>
+                    <div className="Product-details">
+                        <h3 className="Product-name">Weightless Mousse Foundation</h3>
+                        <h4 className="Product-price">$350</h4>
+                        <h5 className="Add-button">Add to Cart</h5>
+                    </div>
+                </div>
+                <div className="Product-card" data-itemType="nailcolor">
+                    <div className="Product-image">
+                        <img src={nailcolorRemove} alt="img" />
+                    </div>
+                    <div className="Product-details">
+                        <h3 className="Product-name">Nail Color Remove</h3>
+                        <h4 className="Product-price">$120</h4>
+                        <h5 className="Add-button">Add to Cart</h5>
+                    </div>
+                </div>
+                <div className="Product-card" data-itemType="shineliner">
+                    <div className="Product-image">
+                        <img src={shineEyeliner} alt="img" />
+                    </div>
+                    <div className="Product-details">
+                        <h3 className="Product-name">Absolute Shine Line Eye Liner</h3>
+                        <h4 className="Product-price">$750</h4>
+                        <h5 className="Add-button">Add to Cart</h5>
+                    </div>
+                </div> 
+            </div>   
+
+            <div id="myModal"  className="modal">
+                <div id="modal-content" className="modalContent" >
+                    <span id="close" className="closeIcon" onClick={hideModal}>&times;</span>
+                    <div className="modalContainer">
+                        
+                        <div className="modalImage">
+                           <img id="modalimage" className="image" src="" alt="image"></img>
+                        </div>
+                        
+                            <h2 id="modalproductN"></h2>
+                            <h3 id="modalproductP"></h3>
+                    
+                    </div>
                 </div>
             </div>
-            <div className="Product-card" data-itemType="cream">
-                <div className="Product-image">
-                    <img src={foundation} alt="img" />
-                </div>
-                <div className="Product-details">
-                    <h3 className="Product-name">Weightless Mousse Foundation</h3>
-                    <h4 className="Product-price">$350</h4>
-                    <h5 className="Add-button">Add to Cart</h5>
-                </div>
-            </div>
-            <div className="Product-card" data-itemType="nailcolor">
-                <div className="Product-image">
-                    <img src={nailcolorRemove} alt="img" />
-                </div>
-                <div className="Product-details">
-                    <h3 className="Product-name">Nail Color Remove</h3>
-                    <h4 className="Product-price">$120</h4>
-                    <h5 className="Add-button">Add to Cart</h5>
-                </div>
-            </div>
-            <div className="Product-card" data-itemType="shineliner">
-                <div className="Product-image">
-                    <img src={shineEyeliner} alt="img" />
-                </div>
-                <div className="Product-details">
-                    <h3 className="Product-name">Absolute Shine Line Eye Liner</h3>
-                    <h4 className="Product-price">$750</h4>
-                    <h5 className="Add-button">Add to Cart</h5>
-                </div>
-            </div> 
-        </div>    
+        </div>  
     )
 
     function showProducts() {
-        
         const addToCartBtn = document.querySelectorAll(".Add-button");
+        const productCard = document.querySelectorAll(".Product-card");
         addToCartBtn.forEach(addBtn => {
             addBtn.addEventListener('click', () => { 
                 addBtn.innerHTML = "Visit Cart";
                 addBtn.removeAttribute("className", "Add-button")
                 addBtn.setAttribute("id", "View-button");
             })
-        });  
+        }); 
+        productCard.forEach(product => {
+            product.addEventListener('click', (e) => {
+                let modal = document.getElementById("myModal");
+                modal.style.display = "block";
+                let Image = document.getElementById("modalimage");
+                Image.src = e.target.src;
+                let productName = document.getElementById("productN");
+                productName = e.target;
+        
+                // let productPrice = document.getElementById("productP");
+                // productPrice.innerText = e.target.innerText;
+            })
+        }) 
+        
+        
          
+    }
+
+    // function showModal(e) {
+    //     let modal = document.getElementById("myModal");
+    //     modal.style.display = "block";
+    //     console.log(modal);
+    //     // let productnames = document.querySelectorAll(".Product-name");
+    //     // console.log(productnames);
+    //     // let value = e.target.innerHTML;
+    //     // console.log(value);
+    //     let Image = document.getElementById("modalimage");
+    //     Image.src = e.target.src;
+    //     let productName = document.getElementById("productN");
+    //     productName.textContent = e.target.textContent;
+        
+    //     let productPrice = document.getElementById("productP");
+    //     productPrice.textContent = e.target.textContent;
+        
+    // }
+    function hideModal() {
+        let modal = document.getElementById("myModal");
+        modal.style.display = "none";
     }
 }
 
