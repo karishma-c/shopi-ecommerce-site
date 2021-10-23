@@ -14,44 +14,56 @@ const Productscontainer = () => {
         <div>
             <div className="Products-container" onLoad={showProducts}>
                 <div className="Product-card" data-itemType="powder">
-                    <div className="Product-image">
-                        <img src={sunscreen} alt="img" />
+                    <div className="Product">
+                        <div className="Product-image">
+                            <img src={sunscreen} alt="img" />
+                        </div>
+                        <div className="Product-details">
+                            <h3 className="Product-name">Face Powder With Sunscreen</h3>
+                            <h4 className="Product-price">$500</h4>
+                            
+                        </div>
                     </div>
-                    <div className="Product-details">
-                        <h3 className="Product-name">Face Powder With Sunscreen</h3>
-                        <h4 className="Product-price">$500</h4>
-                        <h5 className="Add-button">Add to Cart</h5>
-                    </div>
+                    <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="cream">
-                    <div className="Product-image">
-                        <img src={foundation} alt="img" />
+                    <div className="Product">
+                        <div className="Product-image">
+                            <img src={foundation} alt="img" />
+                        </div>
+                        <div className="Product-details">
+                            <h3 className="Product-name">Weightless Mousse Foundation</h3>
+                            <h4 className="Product-price">$350</h4>
+                            
+                        </div>
                     </div>
-                    <div className="Product-details">
-                        <h3 className="Product-name">Weightless Mousse Foundation</h3>
-                        <h4 className="Product-price">$350</h4>
-                        <h5 className="Add-button">Add to Cart</h5>
-                    </div>
+                    <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="nailcolor">
-                    <div className="Product-image">
-                        <img src={nailcolorRemove} alt="img" />
+                    <div className="Product">
+                        <div className="Product-image">
+                            <img src={nailcolorRemove} alt="img" />
+                        </div>
+                        <div className="Product-details">
+                            <h3 className="Product-name">Nail Color Remove</h3>
+                            <h4 className="Product-price">$120</h4>
+                            
+                        </div>
                     </div>
-                    <div className="Product-details">
-                        <h3 className="Product-name">Nail Color Remove</h3>
-                        <h4 className="Product-price">$120</h4>
-                        <h5 className="Add-button">Add to Cart</h5>
-                    </div>
+                    <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="shineliner">
-                    <div className="Product-image">
-                        <img src={shineEyeliner} alt="img" />
+                    <div className="Product">
+                        <div className="Product-image">
+                            <img src={shineEyeliner} alt="img" />
+                        </div>
+                        <div className="Product-details">
+                            <h3 className="Product-name">Absolute Shine Line Eye Liner</h3>
+                            <h4 className="Product-price">$750</h4>
+                            
+                        </div>
                     </div>
-                    <div className="Product-details">
-                        <h3 className="Product-name">Absolute Shine Line Eye Liner</h3>
-                        <h4 className="Product-price">$750</h4>
-                        <h5 className="Add-button">Add to Cart</h5>
-                    </div>
+                    <h5 className="Add-button">Add to Cart</h5>
                 </div> 
             </div>   
 
@@ -75,7 +87,7 @@ const Productscontainer = () => {
 
     function showProducts() {
         const addToCartBtn = document.querySelectorAll(".Add-button");
-        const productCard = document.querySelectorAll(".Product-card");
+        const productCard = document.querySelectorAll(".Product");
         addToCartBtn.forEach(addBtn => {
             addBtn.addEventListener('click', () => { 
                 addBtn.innerHTML = "Visit Cart";
