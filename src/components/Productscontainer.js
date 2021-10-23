@@ -14,7 +14,7 @@ const Productscontainer = () => {
         <div>
             <div className="Products-container" onLoad={showProducts}>
                 <div className="Product-card" data-itemType="powder">
-                    <div className="Product">
+                    <div className="Product" onClick={showModal}>
                         <div className="Product-image">
                             <img src={sunscreen} alt="img" />
                         </div>
@@ -27,7 +27,7 @@ const Productscontainer = () => {
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="cream">
-                    <div className="Product">
+                    <div className="Product" onClick={showModal}>
                         <div className="Product-image">
                             <img src={foundation} alt="img" />
                         </div>
@@ -40,7 +40,7 @@ const Productscontainer = () => {
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="nailcolor">
-                    <div className="Product">
+                    <div className="Product" onClick={showModal}>
                         <div className="Product-image">
                             <img src={nailcolorRemove} alt="img" />
                         </div>
@@ -53,14 +53,14 @@ const Productscontainer = () => {
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="shineliner">
-                    <div className="Product">
+                    <div className="Product" onClick={showModal}>
                         <div className="Product-image">
                             <img src={shineEyeliner} alt="img" />
                         </div>
                         <div className="Product-details">
                             <h3 className="Product-name">Absolute Shine Line Eye Liner</h3>
                             <h4 className="Product-price">$750</h4>
-                            
+                        
                         </div>
                     </div>
                     <h5 className="Add-button">Add to Cart</h5>
@@ -95,41 +95,26 @@ const Productscontainer = () => {
                 addBtn.setAttribute("id", "View-button");
             })
         }); 
-        productCard.forEach(product => {
-            product.addEventListener('click', (e) => {
-                let modal = document.getElementById("myModal");
-                modal.style.display = "block";
-                let Image = document.getElementById("modalimage");
-                Image.src = e.target.src;
-                let productName = document.getElementById("productN");
-                productName = e.target;
         
-                // let productPrice = document.getElementById("productP");
-                // productPrice.innerText = e.target.innerText;
-            })
-        }) 
-        
-        
-         
     }
 
-    // function showModal(e) {
-    //     let modal = document.getElementById("myModal");
-    //     modal.style.display = "block";
-    //     console.log(modal);
-    //     // let productnames = document.querySelectorAll(".Product-name");
-    //     // console.log(productnames);
-    //     // let value = e.target.innerHTML;
-    //     // console.log(value);
-    //     let Image = document.getElementById("modalimage");
-    //     Image.src = e.target.src;
-    //     let productName = document.getElementById("productN");
-    //     productName.textContent = e.target.textContent;
+    function showModal(e) {
+        let modal = document.getElementById("myModal");
+        modal.style.display = "block";
+        console.log(modal);
+        // let productnames = document.querySelectorAll(".Product-name");
+        // console.log(productnames);
+        // let value = e.target.innerHTML;
+        // console.log(value);
+        let Image = document.getElementById("modalimage");
+        Image.src = e.target.src;
         
-    //     let productPrice = document.getElementById("productP");
-    //     productPrice.textContent = e.target.textContent;
         
-    // }
+        
+        // let productPrice = document.getElementById("productP");
+        // productPrice.textContent = e.target.textContent;
+        
+    }
     function hideModal() {
         let modal = document.getElementById("myModal");
         modal.style.display = "none";
