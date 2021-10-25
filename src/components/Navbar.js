@@ -16,14 +16,14 @@ const Navbar = () => {
                     <h2 className="Logo-text">Shopi</h2>
                 </div>
                 <div className="Cart-section">
-                    <NavLink className="navbar-item" activeClassName="is-active" to="/">
-                        Home
-                    </NavLink>
+                <NavLink className="navbar-item" activeClassName="is-active" to="/">
+                    Home
+                </NavLink>
 
-                    <NavLink className="navbar-item" activeClassName="is-active" to="/cart">
-                        <img className="Cart-img" src={shopBag} alt="bagImage" />
-                        Cart
-                    </NavLink>
+                <NavLink className="navbar-item" activeClassName="is-active" to="/cart" onClick={showCart}>
+                <img className="Cart-img" src={shopBag} alt="bagImage" />
+                    Cart
+                </NavLink>
                     
                     {/* <h3 className="Cart-text" onClick={showCart}>Cart</h3> */}
                 </div>
@@ -34,10 +34,7 @@ const Navbar = () => {
     )
     
     function showCart() {
-        ReactDOM.render(
-            <Cart />,
-            document.getElementById("root")
-        );
+        <Cart />
     }
 }
 

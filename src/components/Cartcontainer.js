@@ -1,20 +1,27 @@
 import React from 'react';
-import Navbar from './Navbar';
+import './../styles/Cartcontainer.css';
+// import Home from './Home';
+
 
 const Cart = () => {
     
+    
     return (
         <div>
-            <Navbar></Navbar>
-            <div className="Cart" >
-                <div className="Cart-content">
-                    <h2 className="Cart-text">"Empty"</h2>
-                </div>
+
+            <div id="mySidenav" class="sidenav" >
+            {/* <span id="close" className="close-Icon" onClick={closeNav}>&times;</span> */}
+            <div className="content">
+                "Empty Cart"
             </div>
+            </div>
+        
         </div>
-        
-        
     )
+    
+    // function closeNav() {
+    //     document.getElementById("mySidenav").style.width = "0";
+    // }
 }
 
 export default Cart;

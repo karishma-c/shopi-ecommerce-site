@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM  from 'react';
 import sunscreen from './../images/sunscreen.png';
 import foundation from './../images/foundation.png';
 import nailcolorRemove from './../images/nailcolor-remover.png';
@@ -6,6 +7,7 @@ import nailcolorRemove from './../images/nailcolor-remover.png';
 // import facePack from './../images/sheet-facepack.png';
 import shineEyeliner from './../images/shine-eyeliner.png';
 import './../styles/Productscontainer.css';
+import Cart from './Cartcontainer';
 
 
 const Productscontainer = () => {
@@ -93,11 +95,12 @@ const Productscontainer = () => {
                 addBtn.innerHTML = "Visit Cart";
                 addBtn.removeAttribute("className", "Add-button")
                 addBtn.setAttribute("id", "View-button");
+                
             })
         }); 
         
     }
-
+   
     function showModal(e) {
         let modal = document.getElementById("myModal");
         modal.style.display = "block";
