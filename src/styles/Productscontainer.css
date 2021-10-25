@@ -107,3 +107,6 @@
     height: 100%;
     object-fit: cover;
 }
+.showModal {
+    display: block;
+}

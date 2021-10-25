@@ -10,26 +10,30 @@
 .Logo-text {
     font-size: 31.25px;
     font-weight: 400;
-}
-.Logo-text a {
     text-decoration: none;
     color: #1B1C1E;
 }
-.Cart-section {
+.Cart-section, .navbar-item:nth-child(2) {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     margin: 40px 80px 0 0;
 }
-.Cart-text {
+.navbar-item:nth-child(2) {
+    margin: 0;
+}
+.navbar-item {
     font-size: 20px;
     font-weight: 400;
     margin: 0;
-}
-.Cart-text a {
+    padding: 0 20px 0 0;
     text-decoration: none;
     color: #1B1C1E;
 }
+.navbar-item:hover {
+    text-decoration: underline;
+}
+
 /* .circle {
     background-color: rgb(99, 97, 97);
     border-radius: 50%;

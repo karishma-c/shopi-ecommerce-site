@@ -106,7 +106,7 @@ const Productscontainer = () => {
         // console.log(productnames);
         // let value = e.target.innerHTML;
         // console.log(value);
-        let Image = document.getElementById("modalimage");
+        let Image = document.querySelector("#modalimage");
         Image.src = e.target.src;
         
         
