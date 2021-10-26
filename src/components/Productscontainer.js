@@ -103,11 +103,12 @@ const Productscontainer = () => {
                 addBtn.innerHTML = "Visit Cart";
                 addBtn.removeAttribute("className", "Add-button")
                 addBtn.setAttribute("id", "View-button");
-                const visitCart = document.getElementById("View-button");
-                visitCart.addEventListener('click', () => {
-                    setIsOpen(true);
+                const visitCartBtn = document.querySelectorAll("#View-button");
+                visitCartBtn.forEach(visitBtn => {
+                    visitBtn.addEventListener('click', () => {
+                        setIsOpen(true);
+                    })
                 })
-                
             })
         }); 
         
