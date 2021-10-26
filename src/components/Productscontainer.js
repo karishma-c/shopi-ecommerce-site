@@ -16,6 +16,10 @@ const Productscontainer = () => {
     
     return (
         <div id="main">
+            <div className="message-box">
+               <span id="close" className="close-Icon" onClick={hideToast}>&times;</span>
+               <h3 className="toast-message"></h3>
+            </div>
             <div className="Products-container" onLoad={showProducts}>
                 <div className="Product-card" data-itemType="powder">
                     <div className="Product" >
@@ -74,21 +78,7 @@ const Productscontainer = () => {
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
                 
             </Modal>
-            {/* <div id="myModal"  className="modal">
-                <div id="modal-content" className="modalContent" >
-                    <span id="close" className="closeIcon" onClick={hideModal}>&times;</span>
-                    <div className="modalContainer">
-                        
-                        <div className="modalImage">
-                           <img id="modalimage" className="image" src="" alt="image"></img>
-                        </div>
-                        
-                            <h2 id="modalproductN"></h2>
-                            <h3 id="modalproductP"></h3>
-                    
-                    </div>
-                </div>
-            </div> */}
+            
         </div>  
     )
 
@@ -97,9 +87,8 @@ const Productscontainer = () => {
         const productCard = document.querySelectorAll(".Product");
         addToCartBtn.forEach(addBtn => {
             addBtn.addEventListener('click', () => { 
-                console.log("clicked");
-                // showMessage();
-                // setTimeout(showMessage, 4000);
+                showMessage("Item added to the Cart!!");
+                setTimeout(hideToast, 3000);
                 addBtn.innerHTML = "Visit Cart";
                 addBtn.removeAttribute("className", "Add-button")
                 addBtn.setAttribute("id", "View-button");
@@ -111,20 +100,26 @@ const Productscontainer = () => {
                 })
             })
         }); 
-        
     }
-   
-    // function showMessage() {
-    //     let messageBox = `<div className="message-box">
-    //         <h3 className="toast-message">Item is added to the cart!</h3>
-    //     </div>`;
-    //     let main = document.getElementById("main")[0];
-    //     main.appendChild(messageBox);
-    // }
-    // function hideModal() {
-    //     let modal = document.getElementById("myModal");
-    //     modal.style.display = "none";
-    // }
+
+    function showMessage(text) {
+       const toaster = document.getElementsByClassName("message-box")[0];
+       const message = document.querySelector(".toast-message");
+       const closeBtn = document.getElementById("close");
+       message.textContent = text;
+       toaster.style.display = "block";
+       closeBtn.addEventListener("click" , () => {
+            setTimeout(
+                hideToast
+            , 0);
+        })
+    }
+
+    function hideToast() {
+        const toaster = document.getElementsByClassName("message-box")[0];
+        toaster.style.display = "none";
+    }
+    
 }
 
 export default Productscontainer;

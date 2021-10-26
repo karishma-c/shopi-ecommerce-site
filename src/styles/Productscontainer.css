@@ -63,15 +63,48 @@
     cursor: pointer;
 }
 .message-box {
-    background-color: #84f8a9;
+    display: none;
+    position: fixed;
+    background-color: #94f8b3;
     margin: 0 auto;
+    width: 400px;
+    top: 80px;
+    left: 50px;
+    right: 50px;
+    border-radius: 5px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+   
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.close-Icon {
+    content: "&#10006;";
+    color: black;
+    float: right;
+    position: relative;
+    left: -20px;
+    top: 8px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
 }
 .toast-message {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
     color: black;
     padding: 10px;
     margin: 10px auto;
+    text-align: left;
+}
+.show {
+    display: block;
 }
 
 
