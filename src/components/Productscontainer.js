@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM  from 'react';
 import sunscreen from './../images/sunscreen.png';
 import foundation from './../images/foundation.png';
@@ -7,16 +7,18 @@ import nailcolorRemove from './../images/nailcolor-remover.png';
 // import facePack from './../images/sheet-facepack.png';
 import shineEyeliner from './../images/shine-eyeliner.png';
 import './../styles/Productscontainer.css';
-import Cart from './Cartcontainer';
+import Modal from './Modal';
+// import { Modal } from 'bootstrap';
 
 
 const Productscontainer = () => {
+    const [isOpen, setIsOpen] = useState(false);
     
     return (
-        <div>
+        <div id="main">
             <div className="Products-container" onLoad={showProducts}>
                 <div className="Product-card" data-itemType="powder">
-                    <div className="Product" onClick={showModal}>
+                    <div className="Product" >
                         <div className="Product-image">
                             <img src={sunscreen} alt="img" />
                         </div>
@@ -29,7 +31,7 @@ const Productscontainer = () => {
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="cream">
-                    <div className="Product" onClick={showModal}>
+                    <div className="Product" >
                         <div className="Product-image">
                             <img src={foundation} alt="img" />
                         </div>
@@ -42,7 +44,7 @@ const Productscontainer = () => {
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="nailcolor">
-                    <div className="Product" onClick={showModal}>
+                    <div className="Product">
                         <div className="Product-image">
                             <img src={nailcolorRemove} alt="img" />
                         </div>
@@ -55,7 +57,7 @@ const Productscontainer = () => {
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="shineliner">
-                    <div className="Product" onClick={showModal}>
+                    <div className="Product">
                         <div className="Product-image">
                             <img src={shineEyeliner} alt="img" />
                         </div>
@@ -69,7 +71,10 @@ const Productscontainer = () => {
                 </div> 
             </div>   
 
-            <div id="myModal"  className="modal">
+            <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                
+            </Modal>
+            {/* <div id="myModal"  className="modal">
                 <div id="modal-content" className="modalContent" >
                     <span id="close" className="closeIcon" onClick={hideModal}>&times;</span>
                     <div className="modalContainer">
@@ -83,7 +88,7 @@ const Productscontainer = () => {
                     
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>  
     )
 
@@ -92,36 +97,33 @@ const Productscontainer = () => {
         const productCard = document.querySelectorAll(".Product");
         addToCartBtn.forEach(addBtn => {
             addBtn.addEventListener('click', () => { 
+                console.log("clicked");
+                // showMessage();
+                // setTimeout(showMessage, 4000);
                 addBtn.innerHTML = "Visit Cart";
                 addBtn.removeAttribute("className", "Add-button")
                 addBtn.setAttribute("id", "View-button");
+                const visitCart = document.getElementById("View-button");
+                visitCart.addEventListener('click', () => {
+                    setIsOpen(true);
+                })
                 
             })
         }); 
         
     }
    
-    function showModal(e) {
-        let modal = document.getElementById("myModal");
-        modal.style.display = "block";
-        console.log(modal);
-        // let productnames = document.querySelectorAll(".Product-name");
-        // console.log(productnames);
-        // let value = e.target.innerHTML;
-        // console.log(value);
-        let Image = document.querySelector("#modalimage");
-        Image.src = e.target.src;
-        
-        
-        
-        // let productPrice = document.getElementById("productP");
-        // productPrice.textContent = e.target.textContent;
-        
-    }
-    function hideModal() {
-        let modal = document.getElementById("myModal");
-        modal.style.display = "none";
-    }
+    // function showMessage() {
+    //     let messageBox = `<div className="message-box">
+    //         <h3 className="toast-message">Item is added to the cart!</h3>
+    //     </div>`;
+    //     let main = document.getElementById("main")[0];
+    //     main.appendChild(messageBox);
+    // }
+    // function hideModal() {
+    //     let modal = document.getElementById("myModal");
+    //     modal.style.display = "none";
+    // }
 }
 
 export default Productscontainer;

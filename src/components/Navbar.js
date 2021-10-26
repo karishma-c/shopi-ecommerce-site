@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import shopBag from './../images/shop-bag.svg';
 import './../styles/Navbar.css';
 import Home from './Home';
-import Cart from './Cartcontainer';
+import Modal from './Modal';
 
 const Navbar = () => {
     
@@ -34,7 +34,7 @@ const Navbar = () => {
     )
     
     function showCart() {
-        <Cart />
+        <Modal></Modal>
     }
 }
 

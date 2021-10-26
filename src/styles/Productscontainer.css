@@ -62,7 +62,54 @@
     border: 2px solid #1b1c1e;
     cursor: pointer;
 }
-.closeIcon {
+.message-box {
+    background-color: #84f8a9;
+    margin: 0 auto;
+}
+.toast-message {
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .closeIcon {
     color: #1b1c1e;
     float: right;
     position: relative;
@@ -70,8 +117,8 @@
     font-size: 48px;
     font-weight: bold;
     cursor: pointer;
-}
-.modal {
+} */
+/* .modal {
     display: none;
     position: fixed; 
     z-index: 1;
@@ -80,8 +127,8 @@
     width: 100%; 
     height: 100%; 
     overflow: hidden; 
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0,0,0); 
+    background-color: 
 }
 .modalContent {
     position: relative;
@@ -109,4 +156,4 @@
 }
 .showModal {
     display: block;
-}
+} */
