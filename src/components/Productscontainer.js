@@ -74,11 +74,9 @@ const Productscontainer = () => {
                     <h5 className="Add-button">Add to Cart</h5>
                 </div> 
             </div>   
-
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
                 
             </Modal>
-            
         </div>  
     )
 
@@ -86,9 +84,11 @@ const Productscontainer = () => {
         const addToCartBtn = document.querySelectorAll(".Add-button");
         const productCard = document.querySelectorAll(".Product");
         addToCartBtn.forEach(addBtn => {
-            addBtn.addEventListener('click', () => { 
-                showMessage("Item added to the Cart!!");
-                setTimeout(hideToast, 3000);
+            addBtn.addEventListener('click', () => {
+                if(addBtn.innerHTML == "Add to Cart"){
+                    showMessage("Item added to the Cart!!");
+                    setTimeout(hideToast, 3000);
+                } 
                 addBtn.innerHTML = "Visit Cart";
                 addBtn.removeAttribute("className", "Add-button")
                 addBtn.setAttribute("id", "View-button");

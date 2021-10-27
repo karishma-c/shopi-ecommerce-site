@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import { NavLink } from 'react-router-dom';
 import shopBag from './../images/shop-bag.svg';
@@ -7,7 +7,7 @@ import Home from './Home';
 import Modal from './Modal';
 
 const Navbar = () => {
-    
+    const [isOpen, setIsOpen] = useState(false);
     return (
         
         <div>
@@ -27,6 +27,9 @@ const Navbar = () => {
                     
                     {/* <h3 className="Cart-text" onClick={showCart}>Cart</h3> */}
                 </div>
+                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                
+                </Modal>
             </div>
             
         </div>
