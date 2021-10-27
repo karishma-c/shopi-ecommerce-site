@@ -8,8 +8,9 @@ import nailcolorRemove from './../images/nailcolor-remover.png';
 import shineEyeliner from './../images/shine-eyeliner.png';
 import './../styles/Productscontainer.css';
 import Modal from './Modal';
+// import './../styles/Modal.css';
 // import { Modal } from 'bootstrap';
-
+let productArray = [];
 
 const Productscontainer = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,69 +23,78 @@ const Productscontainer = () => {
             </div>
             <div className="Products-container" onLoad={showProducts}>
                 <div className="Product-card" data-itemType="powder">
-                    <div className="Product" >
-                        <div className="Product-image">
-                            <img src={sunscreen} alt="img" />
-                        </div>
-                        <div className="Product-details">
-                            <h3 className="Product-name">Face Powder With Sunscreen</h3>
-                            <h4 className="Product-price">$500</h4>
-                            
-                        </div>
+                    
+                    <div className="Product-image">
+                        <img src={sunscreen} alt="img" />
                     </div>
+                    <div className="Product-details">
+                        <h3 className="Product-name">Face Powder With Sunscreen</h3>
+                        <h4 className="Product-price">$500</h4>
+                    </div>
+                        
+                    
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="cream">
-                    <div className="Product" >
-                        <div className="Product-image">
-                            <img src={foundation} alt="img" />
-                        </div>
-                        <div className="Product-details">
-                            <h3 className="Product-name">Weightless Mousse Foundation</h3>
-                            <h4 className="Product-price">$350</h4>
-                            
-                        </div>
+                    
+                    <div className="Product-image">
+                        <img src={foundation} alt="img" />
                     </div>
+                    <div className="Product-details">
+                        <h3 className="Product-name">Weightless Mousse Foundation</h3>
+                        <h4 className="Product-price">$350</h4>
+                    </div>
+                        
+                    
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
                 <div className="Product-card" data-itemType="nailcolor">
-                    <div className="Product">
-                        <div className="Product-image">
-                            <img src={nailcolorRemove} alt="img" />
-                        </div>
-                        <div className="Product-details">
-                            <h3 className="Product-name">Nail Color Remove</h3>
-                            <h4 className="Product-price">$120</h4>
-                            
-                        </div>
+                    
+                    <div className="Product-image">
+                        <img src={nailcolorRemove} alt="img" />
                     </div>
+                    <div className="Product-details">
+                        <h3 className="Product-name">Nail Color Remove</h3>
+                        <h4 className="Product-price">$120</h4>
+                    </div>
+                        
+                    
                     <h5 className="Add-button">Add to Cart</h5>
                 </div>
-                <div className="Product-card" data-itemType="shineliner">
-                    <div className="Product">
-                        <div className="Product-image">
-                            <img src={shineEyeliner} alt="img" />
-                        </div>
-                        <div className="Product-details">
-                            <h3 className="Product-name">Absolute Shine Line Eye Liner</h3>
-                            <h4 className="Product-price">$750</h4>
-                        
-                        </div>
+                <div className="Product-card" data-itemType="eyeliner">
+                    
+                    <div className="Product-image">
+                        <img src={shineEyeliner} alt="img" />
                     </div>
+                    <div className="Product-details">
+                        <h3 className="Product-name">Absolute Shine Line Eye Liner</h3>
+                        <h4 className="Product-price">$750</h4>
+                    </div>
+                    
+                   
                     <h5 className="Add-button">Add to Cart</h5>
                 </div> 
             </div>   
-            <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                
+            <Modal open={isOpen} onClose={() => setIsOpen(false)} >
+               <div className="modalContent">
+                   <div className="modalImage">
+                       <img id="currentImage" src="" alt="image" />
+                   </div>
+                   <h3 id="Name">Empty</h3>
+                   <h3 id="Price">Empty</h3>
+               </div>
             </Modal>
         </div>  
     )
 
     function showProducts() {
         const addToCartBtn = document.querySelectorAll(".Add-button");
-        const productCard = document.querySelectorAll(".Product");
+        const elements = document.querySelectorAll(".Product-card");
+        productArray.push(elements);
+        console.log(productArray);
         addToCartBtn.forEach(addBtn => {
             addBtn.addEventListener('click', () => {
+                
                 if(addBtn.innerHTML == "Add to Cart"){
                     showMessage("Item added to the Cart!!");
                     setTimeout(hideToast, 3000);
@@ -95,7 +105,16 @@ const Productscontainer = () => {
                 const visitCartBtn = document.querySelectorAll("#View-button");
                 visitCartBtn.forEach(visitBtn => {
                     visitBtn.addEventListener('click', () => {
+                        // let Image = document.getElementById("currentImage");
+                        // Image.src = e.target;
+                        // let Name = document.querySelector("#Name");
+                        // Name.innerText = e.target.innerText;
+                        
+                        // console.log(e);
+                        // productArray.push();
+                        // console.log(productArray);
                         setIsOpen(true);
+                        
                     })
                 })
             })

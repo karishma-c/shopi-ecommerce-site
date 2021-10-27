@@ -12,15 +12,8 @@ const Modal = ({open, children, onClose}) => {
             <div className="overlay"></div>
             <div className="myModal">
                 <span id="close" className="close-Icon" onClick={onClose}>&times;</span>
-                {children}
-
-                {/* <div id="mySidenav" class="sidenav" > */}
                 
-                {/* <div className="content">
-                    "Empty Cart"
-                </div>
-                </div> */}
-            
+                {children}
             </div>
         </>, 
         document.getElementById("portal")
